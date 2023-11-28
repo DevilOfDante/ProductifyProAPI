@@ -8,10 +8,10 @@ public class CategoryController
     [Fact]
     public void GetAllCategories_Should_Return_All_Categories()
     {
-        // Creazione di un database in memoria
+        // New db memory
         using (var db = new LiteDatabase(new MemoryStream()))
         {
-            // Popolamento del database in memoria con dati di esempio
+            // Populate db memory
             var categories = db.GetCollection<Category>("categories");
             categories.InsertBulk(new[]
             {
